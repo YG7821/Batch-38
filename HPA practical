@@ -98,3 +98,24 @@ Initially, there are 2 Nginx pods.
 When CPU usage exceeds 50%, HPA scales up the pods dynamically (up to 5).
 If CPU load reduces, HPA scales down the pods.
 This ensures efficient resource utilization and cost management.
+==================================================================================================
+While stopping the load generator inside the Kubernetes pod:
+
+<p>For online documentation and support please refer to
+<a href="https://nginx.org/">nginx.org</a>.<br/>
+To engage with the community please visit
+<a href="https://community.nginx.org/">community.nginx.org</a>.<br/>
+For enterprise grade support, professional services, additional 
+security features and capabilities please refer to
+<a href="https://f5.com/nginx">f5.com/nginx</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+^C
+/ # ^C
+
+/ # exit
+Session ended, resume using 'kubectl attach load-generator -c load-generator -i -t' command when the pod is running
+pod "load-generator" deleted from default namespace
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ 
