@@ -119,3 +119,30 @@ security features and capabilities please refer to
 Session ended, resume using 'kubectl attach load-generator -c load-generator -i -t' command when the pod is running
 pod "load-generator" deleted from default namespace
 yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ 
+================================================================================================================================
+Perform rollout update:
+
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl get pod
+kubNAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-6b79ffbdfd-492xb   1/1     Running   0          59m
+nginx-deployment-6b79ffbdfd-cmpd9   1/1     Running   0          44m
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl get deployment
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   2/2     2            2           59m
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl set image deployment/nginx-deployment nginx=nginx:1.17
+deployment.apps/nginx-deployment image updated
+
+Rollout update successfully completed.
+New pods got generated.
+
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl rollout status deployment/nginx-deployment
+deployment "nginx-deployment" successfully rolled out
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl get pod
+NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-679fd47bc5-fbvkb   1/1     Running   0          13m
+nginx-deployment-679fd47bc5-nlw8x   1/1     Running   0          13m
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ 
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl get deployment
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   2/2     2            2           88m
+yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ 
