@@ -120,7 +120,7 @@ Session ended, resume using 'kubectl attach load-generator -c load-generator -i 
 pod "load-generator" deleted from default namespace
 yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ 
 ================================================================================================================================
-Perform rollout update:
+Perform rollout update on an existing deployment:
 
 yogitadevops12@cloudshell:~/yogita/hpa (project-005f2644-b566-4f25-92c)$ kubectl get pod
 kubNAME                                READY   STATUS    RESTARTS   AGE
